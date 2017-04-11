@@ -46,13 +46,21 @@ singleeyefitter_include_path = '../../../capture/pupil_detectors/singleeyefitter
 if platform.system() == 'Windows':
     libs = []
     library_dirs = []
-    lib_spec = [[np.get_include(), ''],
-               ['C:\\work\\opencv3.1.0\\build\\include', 'C:\\work\\opencv3.1.0\\build\\x64\\vc14\\lib\\opencv_world310.lib'],
-               ['C:\\work\\eigen-3.2', ''],
-               ['C:\\work\\ceres-windows\\ceres-solver\\include', 'C:\\work\\ceres-windows\\x64\\Release\\ceres_static.lib'],
-               ['C:\\work\\ceres-windows\\glog\src\windows','C:\\work\\ceres-windows\\x64\\Release\\libglog_static.lib'],
-               ['C:\\work\\ceres-windows','' ],
-               ['C:\\work\\boost_1_59_0', '']]
+#    lib_spec = [[np.get_include(), ''],
+#               ['C:\\work\\opencv3.1.0\\build\\include', 'C:\\work\\opencv3.1.0\\build\\x64\\vc14\\lib\\opencv_world310.lib'],
+#               ['C:\\work\\eigen-3.2', ''],
+#               ['C:\\work\\ceres-windows\\ceres-solver\\include', 'C:\\work\\ceres-windows\\x64\\Release\\ceres_static.lib'],
+#               ['C:\\work\\ceres-windows\\glog\src\windows','C:\\work\\ceres-windows\\x64\\Release\\libglog_static.lib'],
+#               ['C:\\work\\ceres-windows','' ],
+#               ['C:\\work\\boost_1_59_0', '']]
+			   
+	lib_spec = [[np.get_include(), ''],
+               ['E:\\Dev\\pupil-specific\\opencv3.1.0\\build\\include', 'E:\\Dev\\pupil-specific\\opencv3.1.0\\build\\x64\\vc14\\lib\\opencv_world310.lib'],
+               ['E:\\Dev\\pupil-specific\\Eigen\\Eigen', ''],
+               ['E:\\Dev\\pupil-specific\\ceres-windows\\ceres-solver\\include', 'E:\\Dev\\pupil-specific\\ceres-windows\\x64\\Release\\ceres_static.lib'],
+               ['E:\\Dev\\pupil-specific\\ceres-windows\\glog\\src\\windows','E:\\Dev\\pupil-specific\\ceres-windows\\x64\\Release\\libglog_static.lib'],
+               ['E:\\Dev\\pupil-specific\\ceres-windows','' ],
+               ['E:\\Dev\\pupil-specific\\boost_1_59_0', '']]	
 
     include_dirs = [spec[0] for spec in lib_spec]
     include_dirs.append(shared_cpp_include_path)
